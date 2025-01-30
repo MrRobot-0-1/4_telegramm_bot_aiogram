@@ -4,7 +4,6 @@ from config import tg_bot_token, open_weather_token
 from aiogram import Bot, types
 from aiogram.utils import executor
 from aiogram.dispatcher import Dispatcher
-from background import keep_alive
 
 
 bot = Bot(token=tg_bot_token)
@@ -64,6 +63,5 @@ async def get_weather(message: types.Message):
         await message.reply("\U00002620 Проверьте название города \U00002620")
 
 
-keep_alive()
 if __name__ == '__main__':
     executor.start_polling(dp)
