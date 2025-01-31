@@ -12,19 +12,28 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=["start"])
 async def start_command(message: types.Message):
-    await message.reply("Привет! Напиши мне название города и я пришлю сводку погоды!")
+    await message.reply("Привет! Напиши мне название населённого пункта и я пришлю сводку погоды!")
 
 
 @dp.message_handler()
 async def get_weather(message: types.Message):
     code_to_smile = {
-        "Clear": "Ясно \U00002600",
-        "Clouds": "Облачно \U00002601",
-        "Rain": "Дождь \U00002614",
-        "Drizzle": "Дождь \U00002614",
-        "Thunderstorm": "Гроза \U000026A1",
+        "Thunderstorm": "Гроза \U0001F329",
+        "Drizzle": "Моросящий дождь \U0001F326",
+        "Rain": "Дождь \U0001F327",
         "Snow": "Снег \U0001F328",
         "Mist": "Туман \U0001F32B",
+        "Smoke": "Дым \U0001F32B",
+        "Haze": "Дымка \U0001F32B",
+        "Dust sand": "Вихри песка / пыли \U0001F32B",
+        "Fog": "Туман \U0001F32B",
+        "Sand": "Песок \U0001F32B",
+        "Dust": "Пыль \U0001F32B",
+        "Ash": "Вулканический пепел \U0001F32B",
+        "Squall": "Шквал \U0001F32B",
+        "Tornado": "Торнадо \U0001F32B",
+        "Clear": "Ясно \U00002600",
+        "Clouds": "Облачно \U00002601",
     }
 
     try:
@@ -60,7 +69,7 @@ async def get_weather(message: types.Message):
               )
 
     except:
-        await message.reply("\U00002620 Проверьте название города \U00002620")
+        await message.reply("\U0001F928 Проверьте название города \U0001F928")
 
 
 if __name__ == '__main__':
